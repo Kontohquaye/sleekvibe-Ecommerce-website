@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;700&family=Satisfy&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Quicksand", sans-serif;
+  background-color: #fff;
+}
+
+.layout,
+main {
+  max-width: 1400px;
+  margin-inline: auto;
+}
+
+.layout {
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
+
+main {
+  padding: 10px;
+  z-index: 1;
+}

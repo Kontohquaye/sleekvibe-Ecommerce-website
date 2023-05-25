@@ -1,0 +1,226 @@
+header {
+  display: flex;
+  align-items: center;
+  padding: 10px 10px 5px;
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+  box-shadow: 0 1px 2px #33333356;
+  position: relative;
+  z-index: 10;
+}
+
+header a:first-child {
+  text-decoration: none;
+  color: #333;
+}
+
+/* logo */
+.logo {
+  font-family: "Satisfy", cursive;
+}
+
+.logo span {
+  margin-right: 3px;
+}
+
+/* menu */
+.menu {
+  display: none;
+}
+
+.left {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+/* icons */
+ion-icon {
+  cursor: pointer;
+}
+ion-icon:last-child:hover {
+  opacity: 0.7;
+  scale: 1.2;
+}
+
+/* nav */
+nav {
+  display: flex;
+  align-items: center;
+}
+
+nav > * {
+  margin-left: 20px;
+}
+
+nav .categories,
+nav .account {
+  height: 30px;
+  cursor: pointer;
+}
+nav .categories .cat-logo:hover,
+nav .account:hover {
+  opacity: 0.7;
+  scale: 1.2;
+}
+
+nav span {
+  margin-right: 10px;
+  line-height: 30px;
+}
+
+nav .cat-logo {
+  margin-left: 0;
+  text-align: center;
+  font-weight: 600;
+}
+
+nav .account {
+  font-weight: 600;
+}
+
+nav .categories {
+  position: relative;
+  width: 200px;
+}
+
+.categories ul {
+  position: absolute;
+  left: 0;
+  top: 120%;
+  width: inherit;
+  box-shadow: 0 0 5px #333;
+  background-color: #fff;
+  border-radius: 8px;
+  z-index: 2;
+  transition: all 0.5s linear;
+  animation: showList 0.2s linear;
+}
+
+nav li {
+  list-style: none;
+  padding: 10px 5px;
+  border-bottom: 1px solid #ccc;
+}
+
+nav a {
+  text-decoration: none;
+  text-transform: capitalize;
+  color: #333;
+}
+
+/* list animation */
+@keyframes showList {
+  from {
+    top: -120%;
+  }
+  to {
+    top: 120%;
+  }
+}
+
+/*  */
+/* media queries */
+@media screen and (max-width: 768px) {
+  nav.active {
+    display: flex;
+  }
+  nav {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: #fff;
+    box-shadow: 0 0 4px #33333356;
+    border-radius: 8px;
+    padding: 4px;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    border-radius: 4px;
+  }
+
+  nav > a:nth-child(2) {
+    display: flex;
+    align-items: center;
+  }
+  nav > a:last-child::after {
+    content: "cart";
+    font-family: quicksand;
+    font-weight: 700;
+  }
+
+  nav > a:last-child:hover {
+    scale: 1;
+    opacity: 0.7;
+  }
+
+  .cat-logo,
+  nav > a:nth-child(2),
+  nav > a :last-child {
+    display: inline-block;
+  }
+
+  .categories ul {
+    left: -102%;
+    top: 0;
+    box-shadow: 0 0 4px #33333356;
+    border-radius: 4px;
+    z-index: 2;
+    background-color: #fff;
+    scale: 0.8;
+  }
+
+  nav li {
+    list-style: none;
+    padding: 10px 5px;
+    border-bottom: 1px solid #ccc;
+  }
+
+  nav a li:hover {
+    opacity: 0.7;
+  }
+
+  nav .categories .cat-logo:hover,
+  nav .account:hover {
+    scale: 1;
+  }
+  ion-icon:last-child:hover {
+    scale: 1;
+  }
+
+  /* menu */
+  .menu {
+    display: block;
+    cursor: pointer;
+  }
+
+  @keyframes showList {
+    from {
+      left: 0%;
+      opacity: 0;
+      z-index: -1;
+    }
+    to {
+      left: -102%;
+      opacity: 1;
+      z-index: 2;
+    }
+  }
+}
+
+/* scaled the nav */
+@media screen and (max-width: 564px) {
+  nav {
+    scale: 0.8;
+    right: -4%;
+    top: 70%;
+  }
+}
+@media screen and (max-width: 532px) {
+  nav {
+    scale: 0.7;
+    right: -10%;
+    top: 60%;
+  }
+}
