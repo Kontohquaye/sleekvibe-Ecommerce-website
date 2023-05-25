@@ -19,10 +19,11 @@ import Shoes from "./pages/Shoes";
 
 // api's
 import { productsData } from "./api/data";
+import Error from "./pages/Error";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<RootLayout />}>
+    <Route path="/" element={<RootLayout />} errorElement={<Error />}>
       <Route index element={<Home />} loader={productsData} />
       <Route path="womens-clothing" element={<WomensClothing />} />
       <Route path="mens-clothing" element={<MensClothing />} />
